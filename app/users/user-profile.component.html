@@ -1,0 +1,13 @@
+
+<div class="jumbotron" *ngIf="!user">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="glyphicon glyphicon-hand-left"></span>
+                <h2>Click on any of the users to view details</h2>
+            </div>
+        </div>
+        </div>
+ <div class="jumbotron" *ngIf="user"> 
+       <h1>{{ user.name }} <small>{{ user.username }}</small></h1>
+       <input type="text" class="form-control" [(ngModel)]="user.name">
+    </div>

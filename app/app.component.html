@@ -1,0 +1,40 @@
+<header>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand"> Angular 2 Application</a>
+        </div>
+
+    </nav>
+</header>
+<h1 class="text-center"> {{angular}}</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <div *ngIf="users">
+            <ul class="list-group users-list">
+                <li class="list-group-item" 
+                *ngFor="let user of users"
+                (click)="showUsers(user)"
+                [class.active] = "user === activeUser"
+                >
+                    {{ user.name }}
+                </li>
+           </ul>
+        </div>
+        <user-form (userCreated)="onUserCreated($event)"></user-form>
+    </div>
+    <div class="col-md-8">
+       <user-profile [user]="activeUser"></user-profile>
+
+       
+    </div>   
+</div>
+
+
+<footer class="text-center">
+    <div class="row">
+        <div class="col-md-12">
+            Copyright &copy; 2016
+        </div>
+    </div>
+</footer>
